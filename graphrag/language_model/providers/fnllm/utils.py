@@ -153,11 +153,13 @@ def get_openai_model_parameters_from_dict(config: dict[str, Any]) -> dict[str, A
         params["max_completion_tokens"] = config.get("max_completion_tokens")
         params["reasoning_effort"] = config.get("reasoning_effort")
     else:
-        params["max_tokens"] = config.get("max_tokens")
-        params["temperature"] = config.get("temperature")
-        params["frequency_penalty"] = config.get("frequency_penalty")
-        params["presence_penalty"] = config.get("presence_penalty")
-        params["top_p"] = config.get("top_p")
+        params["max_completion_tokens"] = config.get("max_completion_tokens")
+        params["reasoning_effort"] = config.get("reasoning_effort")
+        # params["max_tokens"] = config.get("max_tokens")
+        # params["temperature"] = config.get("temperature")
+        # params["frequency_penalty"] = config.get("frequency_penalty")
+        # params["presence_penalty"] = config.get("presence_penalty")
+        # params["top_p"] = config.get("top_p")
 
     if config.get("response_format"):
         params["response_format"] = config["response_format"]
